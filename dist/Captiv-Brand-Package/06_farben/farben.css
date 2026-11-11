@@ -1,0 +1,52 @@
+/* Captiv Farben */
+:root {
+  --captiv-indigo: #3034C5;   /* Markenfarbe: Akzente, Links, Buttons, erste Chartfarbe */
+  --captiv-indigo-hell-80: #D6D6F3;
+  --captiv-indigo-hell-60: #ACAEE8;
+  --captiv-indigo-hell-40: #8385DC;
+  --captiv-indigo-dunkel-25: #242794;
+  --captiv-indigo-dunkel-50: #181A62;
+  --captiv-tinte: #16122D;   /* Überschriften, Logo, Hintergrund dunkler Folien */
+  --captiv-tinte-hell-80: #D0D0D5;
+  --captiv-tinte-hell-60: #A2A0AB;
+  --captiv-tinte-hell-40: #737181;
+  --captiv-tinte-dunkel-25: #100E22;
+  --captiv-tinte-dunkel-50: #0B0916;
+  --captiv-graphit: #434054;   /* Fließtext auf Website und in Office */
+  --captiv-indigo-tief: #1A1B6F;   /* Zweite dunkle Fläche, Text 2 im hellen Master */
+  --captiv-indigo-tief-hell-80: #D1D1E2;
+  --captiv-indigo-tief-hell-60: #A3A4C5;
+  --captiv-indigo-tief-hell-40: #7676A9;
+  --captiv-indigo-tief-dunkel-25: #141453;
+  --captiv-indigo-tief-dunkel-50: #0D0E38;
+  --captiv-lavendel: #A1A1F0;   /* Zweitfarbe: Charts, Flächen, Highlights */
+  --captiv-lavendel-hell-80: #ECECFC;
+  --captiv-lavendel-hell-60: #D9D9F9;
+  --captiv-lavendel-hell-40: #C7C7F6;
+  --captiv-lavendel-dunkel-25: #7979B4;
+  --captiv-lavendel-dunkel-50: #505078;
+  --captiv-schiefer: #706C7E;   /* Gedämpfter Text, Quellen, Achsen, Sonstige in Charts */
+  --captiv-schiefer-hell-80: #E2E2E5;
+  --captiv-schiefer-hell-60: #C6C4CB;
+  --captiv-schiefer-hell-40: #A9A7B2;
+  --captiv-schiefer-dunkel-25: #54515E;
+  --captiv-schiefer-dunkel-50: #38363F;
+  --captiv-nebel: #E9E6E0;   /* Helle Flächen, Boxen, Tabellenzeilen */
+  --captiv-papier: #F8F6F2;   /* Grundfläche Website und Dokumente */
+  --captiv-weiss: #FFFFFF;   /* Grundfläche Slides, Logo auf dunklem Grund */
+
+  /* Chartfarben: Reihenfolge fest, auf Weiß chart-N, auf Indigo tief chart-dunkel-N */
+  --captiv-chart-1: #3034C5;   /* Indigo */
+  --captiv-chart-dunkel-1: #6977F6;   /* Indigo hell */
+  --captiv-chart-2: #7D87DE;   /* Lavendel */
+  --captiv-chart-dunkel-2: #ADAEF6;   /* Lavendel hell */
+  --captiv-chart-3: #00897A;   /* Petrol */
+  --captiv-chart-dunkel-3: #1FB3A0;   /* Petrol hell */
+  --captiv-chart-4: #C9831A;   /* Amber */
+  --captiv-chart-dunkel-4: #E09A2C;   /* Amber hell */
+  --captiv-chart-5: #2E7FCF;   /* Blau */
+  --captiv-chart-dunkel-5: #5A9BE0;   /* Blau hell */
+  --captiv-chart-6: #CF4F3A;   /* Koralle */
+  --captiv-chart-dunkel-6: #E86F58;   /* Koralle hell */
+  --captiv-chart-sonstige: #706C7E;
+}

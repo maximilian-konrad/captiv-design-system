@@ -1,0 +1,240 @@
+{
+  "Indigo": {
+    "hex": "#3034C5",
+    "rgb": [
+      48,
+      52,
+      197
+    ],
+    "cmyk_naeherung": [
+      76,
+      74,
+      0,
+      23
+    ],
+    "verwendung": "Markenfarbe: Akzente, Links, Buttons, erste Chartfarbe",
+    "stufen": {
+      "hell_80": "#D6D6F3",
+      "hell_60": "#ACAEE8",
+      "hell_40": "#8385DC",
+      "dunkel_25": "#242794",
+      "dunkel_50": "#181A62"
+    }
+  },
+  "Tinte": {
+    "hex": "#16122D",
+    "rgb": [
+      22,
+      18,
+      45
+    ],
+    "cmyk_naeherung": [
+      51,
+      60,
+      0,
+      82
+    ],
+    "verwendung": "Überschriften, Logo, Hintergrund dunkler Folien",
+    "stufen": {
+      "hell_80": "#D0D0D5",
+      "hell_60": "#A2A0AB",
+      "hell_40": "#737181",
+      "dunkel_25": "#100E22",
+      "dunkel_50": "#0B0916"
+    }
+  },
+  "Graphit": {
+    "hex": "#434054",
+    "rgb": [
+      67,
+      64,
+      84
+    ],
+    "cmyk_naeherung": [
+      20,
+      24,
+      0,
+      67
+    ],
+    "verwendung": "Fließtext auf Website und in Office"
+  },
+  "Indigo tief": {
+    "hex": "#1A1B6F",
+    "rgb": [
+      26,
+      27,
+      111
+    ],
+    "cmyk_naeherung": [
+      77,
+      76,
+      0,
+      56
+    ],
+    "verwendung": "Zweite dunkle Fläche, Text 2 im hellen Master",
+    "stufen": {
+      "hell_80": "#D1D1E2",
+      "hell_60": "#A3A4C5",
+      "hell_40": "#7676A9",
+      "dunkel_25": "#141453",
+      "dunkel_50": "#0D0E38"
+    }
+  },
+  "Lavendel": {
+    "hex": "#A1A1F0",
+    "rgb": [
+      161,
+      161,
+      240
+    ],
+    "cmyk_naeherung": [
+      33,
+      33,
+      0,
+      6
+    ],
+    "verwendung": "Zweitfarbe: Charts, Flächen, Highlights",
+    "stufen": {
+      "hell_80": "#ECECFC",
+      "hell_60": "#D9D9F9",
+      "hell_40": "#C7C7F6",
+      "dunkel_25": "#7979B4",
+      "dunkel_50": "#505078"
+    }
+  },
+  "Schiefer": {
+    "hex": "#706C7E",
+    "rgb": [
+      112,
+      108,
+      126
+    ],
+    "cmyk_naeherung": [
+      11,
+      14,
+      0,
+      51
+    ],
+    "verwendung": "Gedämpfter Text, Quellen, Achsen, Sonstige in Charts",
+    "stufen": {
+      "hell_80": "#E2E2E5",
+      "hell_60": "#C6C4CB",
+      "hell_40": "#A9A7B2",
+      "dunkel_25": "#54515E",
+      "dunkel_50": "#38363F"
+    }
+  },
+  "Nebel": {
+    "hex": "#E9E6E0",
+    "rgb": [
+      233,
+      230,
+      224
+    ],
+    "cmyk_naeherung": [
+      0,
+      1,
+      4,
+      9
+    ],
+    "verwendung": "Helle Flächen, Boxen, Tabellenzeilen"
+  },
+  "Papier": {
+    "hex": "#F8F6F2",
+    "rgb": [
+      248,
+      246,
+      242
+    ],
+    "cmyk_naeherung": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "verwendung": "Grundfläche Website und Dokumente"
+  },
+  "Weiß": {
+    "hex": "#FFFFFF",
+    "rgb": [
+      255,
+      255,
+      255
+    ],
+    "cmyk_naeherung": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "verwendung": "Grundfläche Slides, Logo auf dunklem Grund"
+  },
+  "Chartfarben": {
+    "regel": "Serie 1 = Farbe 1 usw. Auf Weiß die helle Reihe (hell_hintergrund), auf Tinte die dunkle Reihe (dunkel_hintergrund). Sonstige: Schiefer.",
+    "hell_hintergrund": [
+      {
+        "position": 1,
+        "name": "Indigo",
+        "hex": "#3034C5"
+      },
+      {
+        "position": 2,
+        "name": "Lavendel",
+        "hex": "#7D87DE"
+      },
+      {
+        "position": 3,
+        "name": "Petrol",
+        "hex": "#00897A"
+      },
+      {
+        "position": 4,
+        "name": "Amber",
+        "hex": "#C9831A"
+      },
+      {
+        "position": 5,
+        "name": "Blau",
+        "hex": "#2E7FCF"
+      },
+      {
+        "position": 6,
+        "name": "Koralle",
+        "hex": "#CF4F3A"
+      }
+    ],
+    "dunkel_hintergrund": [
+      {
+        "position": 1,
+        "name": "Indigo hell",
+        "hex": "#6977F6"
+      },
+      {
+        "position": 2,
+        "name": "Lavendel hell",
+        "hex": "#ADAEF6"
+      },
+      {
+        "position": 3,
+        "name": "Petrol hell",
+        "hex": "#1FB3A0"
+      },
+      {
+        "position": 4,
+        "name": "Amber hell",
+        "hex": "#E09A2C"
+      },
+      {
+        "position": 5,
+        "name": "Blau hell",
+        "hex": "#5A9BE0"
+      },
+      {
+        "position": 6,
+        "name": "Koralle hell",
+        "hex": "#E86F58"
+      }
+    ],
+    "sonstige": "#706C7E"
+  }
+}
