@@ -1,5 +1,5 @@
 # /// script
-# dependencies = []
+# dependencies = ["pillow"]
 # ///
 """Builds the Captiv logo package (SVG sources, then PDF/PNG/ICO via rsvg-convert)."""
 import json, math, os, shutil, subprocess, struct
@@ -117,8 +117,9 @@ icons = {"weiss-auf-indigo": ("#FFFFFF", COL["indigo"]), "weiss-auf-tinte": ("#F
          "tinte-auf-weiss": (COL["tinte"], "#FFFFFF")}
 for name, (fg, bg) in icons.items():
     export(write(f"03_icons/app-icon_{name}.svg", icon(fg, bg)), pngs=(180, 512, 1024))
-    # square (no radius) for platforms that crop themselves (LinkedIn, Google, etc.)
-    export(write(f"03_icons/profilbild_{name}.svg", icon(fg, bg, radius_ratio=0, scale=0.58)), pdf=False, pngs=(400, 800))
+    # square (no radius) for platforms that crop themselves (LinkedIn, Google, etc.); same mark size as the app icons,
+    # which still fits inside the circle crop
+    export(write(f"03_icons/profilbild_{name}.svg", icon(fg, bg, radius_ratio=0, scale=0.66)), pdf=False, pngs=(400, 800))
 # favicon: slightly larger mark on graphit tile
 fav = write("03_icons/favicon/favicon.svg", icon("#FFFFFF", COL["tinte"], radius_ratio=0.2, scale=0.78, S=64))
 favdir = os.path.dirname(fav)
@@ -190,20 +191,38 @@ export(write(f"{E}/zeichen-im-raster_indigo.svg", svg(GW, GH, ghost, bg=COL["ind
 
 # ---------------------------------------------------------------- 05 Anwendungen
 A = "05_anwendungen"
-def banner(Wt, Ht, fg, bg, logo_h_ratio, field_cols=None, name="", accent=None):
+def banner(Wt, Ht, fg, bg, logo_h_ratio, field_cols=None, name="", accent=None, rows=14, logo_y=0.5, logo_x=None):
+    """Logo left, dot field on the right half. rows sets the dot size: 14 rows = half the size of the first version.
+    logo_y is the vertical centre of the logo as a share of the height (LinkedIn covers the lower left with the profile photo)."""
     W, H, body = lockup_h(fg)
     s = Ht * logo_h_ratio / H
-    tx, ty = Ht * 0.16 if Wt / Ht > 3 else Wt * 0.08, (Ht - H * s) / 2
-    pitch = Ht / 7
-    cols = int(Wt * 0.48 / pitch); rows = 7
+    tx, ty = Ht * 0.16 if Wt / Ht > 3 else Wt * 0.08, Ht * logo_y - H * s / 2
+    if logo_x is not None: tx = Wt * logo_x
+    pitch = Ht / rows
+    cols = int(Wt * 0.48 / pitch)
     fw, fh, fb = field(cols, rows, lambda u, v, i, j: u, accent or COL["schiefer"], pitch=pitch, rmin=0, rmax=0.9 * pitch / 2, pad=pitch / 2)
     fx = Wt - cols * pitch
     fgp = f'<g transform="translate({f(fx)} 0)" opacity="0.9">{fb}</g>'
     return svg(Wt, Ht, fgp + f'<g transform="translate({f(tx)} {f(ty)}) scale({s})">{body}</g>', bg=bg, title=name)
-for nm, (Wt, Ht, ratio) in {"linkedin-banner_1584x396": (1584, 396, 0.26), "og-bild_1200x630": (1200, 630, 0.17), "x-banner_1500x500": (1500, 500, 0.24)}.items():
-    p = write(f"{A}/{nm}.svg", banner(Wt, Ht, COL["tinte"], COL["papier"], ratio, name=nm, accent=COL["indigo"]))
+# LinkedIn: personal profile 1584 x 396 (4:1), company page 1128 x 191 (about 5.9:1). The profile photo covers the
+# lower left, so the logo sits in the upper half; on the company page the square logo tile covers the left fifth
+# from 60 % of the height down, so the lockup sits small in the top left corner, aligned with the tile
+BANNERS = {"linkedin-banner_1584x396": (1584, 396, 0.26, 0.36), "linkedin-unternehmensseite_1128x191": (1128, 191, 0.20, 0.27, 0.035),
+           "og-bild_1200x630": (1200, 630, 0.17, 0.5), "x-banner_1500x500": (1500, 500, 0.24, 0.5)}
+for nm, (Wt, Ht, ratio, ly, *lx) in BANNERS.items():
+    p = write(f"{A}/{nm}.svg", banner(Wt, Ht, COL["tinte"], COL["papier"], ratio, name=nm, accent=COL["indigo"], logo_y=ly, logo_x=lx[0] if lx else None))
     subprocess.run(["rsvg-convert", "-w", str(Wt * 2), "-o", p[:-4] + "@2x.png", p], check=True)
     subprocess.run(["rsvg-convert", "-w", str(Wt), "-o", p[:-4] + ".png", p], check=True)
+    if nm.startswith("linkedin"):
+        # LinkedIn recompresses uploads; a high-quality JPG at the size LinkedIn stores (company page 1512 px wide)
+        # and at twice that size survives better than a PNG
+        from PIL import Image
+        for w in ((1512, 3024) if "unternehmensseite" in nm else (1584, 3168)):
+            tmp = p[:-4] + f"_{w}.tmp.png"
+            subprocess.run(["rsvg-convert", "-w", str(w), "-o", tmp, p], check=True)
+            h = round(w * Ht / Wt)
+            Image.open(tmp).convert("RGB").save(p.rsplit("_", 1)[0] + f"_{w}x{h}.jpg", quality=92, subsampling=0, optimize=True)
+            os.remove(tmp)
 # e-mail signature logo (PNG 2x, horizontal tinte)
 W, H, body = lockup_h(COL["tinte"])
 p = write(f"{A}/email-signatur_logo.svg", svg(W, H, body))

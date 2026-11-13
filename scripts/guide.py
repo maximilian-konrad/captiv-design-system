@@ -235,7 +235,7 @@ pages.append(page(13, "Anwendung", "Slides und Social", f'''
 <div class="row" style="gap:4mm">{"".join(f'<div class="col"><img class="shot" src="{jpg(n)}"><div class="caps">{l}</div></div>' for n, l in (("master-titel-hell", "Titelfolie, heller Master"), ("master-titel-dunkel", "Titelfolie, dunkler Master"), ("master-haelfte-hell", "Layout 1/2 mit Nebel-Fläche"), ("master-kapitel-dunkel", "Kapitelfolie, dunkler Master")))}</div>
 <ul class="bul" style="margin-top:4mm"><li>Vorlage: 09_praesentation/Captiv-Master.potx, mit hellem und dunklem Master und 31 Layouts</li>
 <li>Heller Master für Inhalte, dunkler Master für Titel, Kapitel und Botschaften. Titel und Text in Arial</li></ul>
-<div class="row" style="gap:5mm;margin-top:3mm"><div class="col" style="flex:2"><img class="shot" src="{png("05_anwendungen/linkedin-banner_1584x396.png")}"><div class="caps">LinkedIn-Banner</div></div>
+<div class="row" style="gap:5mm;margin-top:3mm"><div class="col" style="flex:2"><img class="shot" src="{png("05_anwendungen/linkedin-banner_1584x396.png")}"><div class="caps">LinkedIn-Banner (Profil)</div></div>
 <div class="col"><img class="shot" src="{png("03_icons/profilbild_weiss-auf-indigo_400px.png")}" style="width:26mm"><div class="caps">Profilbild</div></div></div>'''))
 
 # 14 package contents
@@ -243,7 +243,7 @@ items = [("00", "Brand Guidelines", "Dieses Dokument"), ("01_zeichen", "Zeichen"
          ("02_logo", "Logo", "Horizontal (Standard), gestapelt, Wortmarke; alle Farbvarianten und auf Flächen"),
          ("03_icons", "Icons", "App-Icons, Profilbilder, Favicon-Set für Websites"),
          ("04_stilelemente", "Stilelemente", "Punktfelder (Verlauf, Zoom, Auflösung), Rasterkacheln, Trenner, Zeichen im Raster"),
-         ("05_anwendungen", "Anwendungen", "LinkedIn- und X-Banner, Vorschaubild für Links, Logo für die E-Mail-Signatur"),
+         ("05_anwendungen", "Anwendungen", "LinkedIn-Banner für Profil (1584 × 396) und Unternehmensseite (1128 × 191), X-Banner, Vorschaubild für Links, Logo für die E-Mail-Signatur"),
          ("06_farben", "Farben", "CSS, JSON, Office-Designfarben hell und dunkel (PowerPoint, Word, Excel), Adobe-Farbfelder (ASE), Chartfarben"),
          ("07_schrift", "Schrift", "Geist zum Installieren (Light bis Bold, variabel) und für das Web, mit Lizenz"),
          ("08_bildsprache", "Bildsprache", "Freigestellte Team-Porträts und Referenzfotos mit Bewegungsunschärfe"),

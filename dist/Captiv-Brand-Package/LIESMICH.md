@@ -15,7 +15,7 @@ Die Regeln stehen in **00_Captiv-Brand-Guidelines.pdf**.
 - 02_logo: horizontal (Standard), gestapelt, Wortmarke; in /flaeche mit Hintergrund
 - 03_icons: App-Icons, Profilbilder, Favicon-Set (SVG, ICO, PNG, apple-touch-icon)
 - 04_stilelemente: Punktfelder (Verlauf, Zoom, Auflösung), Rasterkacheln, Trenner, Zeichen im Raster
-- 05_anwendungen: LinkedIn- und X-Banner, Vorschaubild für Links (OG), Logo für die E-Mail-Signatur
+- 05_anwendungen: LinkedIn-Banner für Profil (1584 × 396) und Unternehmensseite (1128 × 191), X-Banner, Vorschaubild für Links (OG), Logo für die E-Mail-Signatur
 - 06_farben: farben.css, farben.json (inkl. Chartfarben), office/Captiv.xml und office/Captiv-Dunkel.xml (Designfarben für PowerPoint, Word, Excel), adobe/Captiv-Farben.ase, farbpalette.svg
 - 07_schrift: Geist zum Installieren (desktop: Light, Regular, Medium, SemiBold, Bold, variabel) und fürs Web (woff2), mit Lizenz
 - 08_bildsprache: freigestellte Team-Porträts, Referenzfotos mit Bewegungsunschärfe
